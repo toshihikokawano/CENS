@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> CENS: configuration </title>
+<meta charset="us-ascii">
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<a href="usage.html">   [BACK] </a>
+<a href="index.html">    [UP]  </a>
+<hr>
+
+<h1> Configuration </h1>
+<h2><a name="configfile"> Configuration File </a></h2>
+
+<p>Athough CENS does not require any input data for general use, 
+some internal variables can be modified by a <code>config.dat</code> file
+in the current directory. This is a simple ASCII file, containing 
+<code> Keyword = Value </code> lines. The keywords are
+
+<pre id="dat">
+MaxDiscreteLevels = 10000
+MaxGammaLines     = 100
+ENSDFDirectory = /usr/local/share/ENSDF/adopted
+RIPLDirectory = /usr/local/share/coh/levels
+EnergyUnit = MeV
+</pre>
+
+<p><code>MaxDiscreteLevels</code> is the max number of discrete levels
+to be loaded from ENSDF, and <code> MaxGammaLines</code> is the max
+number of gamma decay from each discrete level. The default values for
+these variables are defined in <code>cens.h</code>, and probably no
+need to change them.</p>
+
+<p><code>ENSDFDirectory</code> and <code>RIPLDirectory </code> are
+default directories where CENS finds ENSDF and RIPL data files. The
+default value is the current directory. The RIPL files are used to
+extract Internal Conversion Coefficients (ICC) that are not given in
+ENSDF.  If any RIPL files are found, ICC will be zero, unless ENSDF
+has its value. </p>
+
+<p><code>EnergyUnit</code> controls the unit of output energy values.
+The acceptable values are <code>eV</code>, <code>keV</code>,
+and <code>MeV</code>, and the default unit is MeV.</p>
+
+
+
+<hr>
+<a href="usage.html">   [BACK] </a>
+<a href="index.html">    [UP]  </a>
+</body>
+</html>

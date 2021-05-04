@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> CENS Evaluated Nuclear Structure Data File Converter </title>
+<meta charset="us-ascii">
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<h1><a name = "top">  Evaluated Nuclear Structure Data File Converter </a><br/>
+     CENS Manual </h1>
+
+<p style="text-align:center;">
+<img src="cens.png" width="600" height="300" alt="CENS Logo" title="CENS" style="margin-top:20px;margin-bottom:20px;padding:0px;">
+</p>
+
+<p style="text-align:center;"> March, 2021 </p>
+<p style="text-align:right;"> Kawano Toshihiko </p>
+<p style="text-align:right;"> Los Alamos National Laboratory </p>
+
+<h2> Table of Contents </h2>
+
+<ul>
+<li> <a href="#general">
+     Introduction </a>
+    <ul>
+    <li> <a href="#general">
+         General Information </a>
+
+    <li> <a href="#history">
+         History </a>
+    </ul>
+<li> <a href="usage.html">
+     Usage </a>
+    <ul>
+    <li> <a href="usage.html#compile">
+         To Compile CENS</a>
+
+    <li> <a href="usage.html#ensdf">
+         ENSDF </a>
+
+    <li> <a href="usage.html#option">
+         Command-Line Options </a>
+
+    <li> <a href="usage.html#gnuplot">
+         Data Plotting Output </a>
+    </ul>
+<li> <a href="config.html">
+     Configuration </a>
+    <ul>
+    <li> <a href="config.html#configfile">
+         Configuration File</a>
+    </ul>
+</ul>
+
+<hr>
+<a href="#top">    [TOP]  </a>
+
+
+<h1> Introduction </h1>
+<h2><a name="general"> General Information </a></h2>
+
+<p>The CENS code translates adopted discrete levels in ENSDF into a
+Hauser-Feshbach code readable format, such as the discrete level
+section in RIPL (Reference Input Parameter Library).  Missing
+information, like unknown spin and parity, gamma decay branching
+ratio, etc. is estimated by considering the statistical properties of
+nuclear strucure. CENS also prints discrete level information 
+in the XML format.
+
+
+<h2><a name="history"> History </a></h2>
+
+<p>CENS development started in Nov. 2016 (ver.0.0). Although the main
+part of ENSDF parser was done at that time, it has been put aside for
+a long time.  In Mar. 2021, two functions were added; (i) statistical
+analysis of discrete levels (density and spin distribution), and (ii)
+reading Internal Conversion Coefficients from RIPL when ENSDF does not
+have this information. This is the first functional version
+(0.1). </p>
+
+<p>In May 2021, CENS was released as open-source software from Los
+Alamos National Laboratory.</p>
+
+
+<hr>
+<a href="#top"> [TOP] </a>
+<hr>
+</body>
+</html>

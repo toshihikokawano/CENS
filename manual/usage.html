@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> CENS: usage </title>
+<meta charset="us-ascii">
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<a href="index.html">    [UP]  </a>
+<a href="config.html">   [NEXT] </a>
+<hr>
+
+<h1> Usage </h1>
+<h2><a name="compile"> To Compile CENS </a></h2>
+
+<p>You need a standard C++ compiler, such as gcc.  CENS comes with a
+generic <code>Makefile</code>. At least c++ in Xcode or gcc in
+MacPorts on MacOS should work to compile CENS. Any extra libraries are
+not required.</p>
+
+<p>To compile CENS, go into the source directory, edit
+<code>Makefile</code> as needed, then just "make" should work. The code
+does not need to install anywhere, since this is a stand-alone
+executable.</p>
+
+
+<h2><a name="ensdf"> ENSDF </a></h2>
+
+<p>CENS reads a single ENSDF file, which contains the <code>ADOPTED
+LEVELS, GAMMA</code> segment as below. This file must be for a unique
+Z and A.  Unfortunately the current version of CENS does not look for
+a proper part in a big file when many Z,A sections are
+concatenated.</p>
+
+<pre id="dat">
+ 56FE    ADOPTED LEVELS, GAMMAS                                  11NDS    201105
+ 56FE  H TYP=ERR$AUT=B. Singh$DAT=3-Nov-2011$COM=corrected MOMM1 (847 level)$   
+ 56FE  H TYP=FUL$AUT=HUO JUNDE, HUO SU, YANG DONG$CIT=NDS 112, 1513 (2011)$     
+ 56FE2 H CUT=29-Oct-2009$                                                       
+ 56FE  Q -4566.6   5 11197.102310183.6716-7613.3 4     2012WA38                 
+...
+ 56FE  L 12520     30                                                       N   
+ 56FE2 L XREF=J$                                                                
+</pre>
+
+<p>A recommended file name is in the form of <code>ENSDF0ZZAAA.dat</code>,
+but not necessary. CENS assumes this type of names when an ENSDF file name
+is not explicitly given.</p>
+
+
+<h2><a name="option"> Command Line Options </a></h2>
+
+<p>CENS runs in a command line mode. The syntax is
+<pre id="syn">
+   % cens -p <i>option</i>  <i>ENSDFfile</i>
+   % cens -p <i>option</i>  -z <i>Znumber</i> -a <i>Anumber</i>
+</pre>
+
+<p>The first syntax is to provide an ENSDF data file name as a
+command-line option.  The second example is to provide both Z and A
+numbers. Z-number can be a chemical symbol like 'Al' too.  In this
+case, CENS assumes the ENSDF file name
+is <code>ENSDF0ZZAAA.dat</code>.
+
+
+<p>When the variable <code>ENSDFDirectory</code> is set
+in <code>config.dat</code>, CENS looks for the ENSDF data in that
+directory. Otherwise the current directory is the default
+location. Instead of setting
+<code>ENSDFDirectory</code>, you can provide the full-path of the 
+ENSDF file, like <code>/your/ensdf/directory/ENSDF025055.dat</code>.
+
+<p>The command line <code>-p</code> option controls the output.
+When not given (or option is zero), CENS produces a RIPL-like file.</p>
+
+<p>When <i>option</i> = 1, raw data of the discrete level energy,
+spin, parity, and gamma decay given in ENSDF are printed in XML. The
+case 2 prints the same data but minimum data fixes (energy adjustment
+and branching ration normalization) are performed.</p>
+
+<p> The option 3 and 4 are for printing the level density and the spin
+distribution as a result of statistical analyis. The option 3 prints
+the level density parameter and spin cut-off parameter. The option 4
+produces X-Y column data for plotting. See below.</p>
+
+
+<h2><a name="gnuplot"> Data Plotting Output </a></h2>
+
+<p>The option <code> -p 4 </code> produces numerical data of
+both the level density and spin distribution. These tables 
+can be visualized by plotting tools, such as gnuplot.</p>
+
+<pre id="dat">
+#    39   99
+# Cumulative Number of Levels
+ 0.00000e+00 1.00000e+00
+ 1.25122e-01 2.00000e+00
+ 2.83730e-01 3.00000e+00
+ 4.82210e-01 4.00000e+00
+...
+ 3.02801e+00 4.00000e+01
+ 3.17891e+00 4.10000e+01
+
+
+# Constant Temperature Model
+ 1.00000e-01 4.22094e-01
+ 2.00000e-01 9.30731e-01
+ 3.00000e-01 1.54365e+00
+...
+</pre>
+
+<p>The output sequence is as follows.</p>
+
+<p>1: Discrete level energy, and number given in ENSDF. </p>
+
+<p>2: Cumulative level density calculated with the constant temperature model. </p>
+
+<p>3: The highest level up to which discrete level information (energy, spin, and parity)
+are considered to be complete.</p>
+
+<p>4: The highest level up to which there is no missing levels.</p>
+
+<p>5: Distribution of spin given in ENSDF. </p>
+
+<p>6: Spin distribution calculated with the derived spin cut-off parameter.</p>
+
+
+<hr>
+<a href="index.html">    [UP]  </a>
+<a href="config.html">   [NEXT] </a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+CENS: Evaluated Nuclear Structure Data File Converter
+
+   Language C++
+   Author   Kawano, T.
+   Version  0.2 (Mar. 2021)
+
+The CENS code translates adopted discrete levels in ENSDF into a
+Hauser-Feshbach code readable format, such as the discrete level
+section in RIPL (Reference Input Parameter Library).  Missing
+information, like unknown spin and parity, gamma decay branching
+ratio, etc. is estimated by considering the statistical properties of
+nuclear structure. 
+
+
+History:
+    0.1   Nov. 2016   initial version
+    0.2   Mar. 2021   statistical analysis added, open-source version
+
+
+Files:
+    source/
+      [Main Program]
+        cens.h                prototype definition of main modules
+        ensdf.h               ENSDF class
+        terminate.h           code emergency stop and other messages
+        cens.cpp              main program
+        ensdfread.cpp         read ENSDF file and store the information in an ENSDF object
+        riplread.cpp          extract IC from RIPL file when ENSDF does not have this
+        censgamma.cpp         determine the gamma-decay final states and branching ratios
+        censstat.cpp          perform statistical analysis of discrete levels
+        outxml.cpp            print out the ENSDF object in XML
+        outripl.cpp           print out the final result in the RIPL format
+        outstat.cpp           print statistical analysis results
+
+      [Configuration Utility]
+        cfgread.h
+        cfgread.cpp
+        config.dat
+
+      [Mass Table]
+        masstable.h
+        masstable_audi2012_frdm2012.h
+        masstable.cpp
+
+      [Least-Squares Module]
+        polysq.h
+        polycalc.cpp
+        polysq.cpp
+
+

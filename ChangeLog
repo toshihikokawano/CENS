@@ -1,0 +1,50 @@
+2021-03-14  KAWANO Toshihiko  <kawano@lanl.gov>
+
+	* source/censstat.cpp (CENSStat): updated
+	change max level for spin cut-off parameter
+
+	* manual/style.css: from DeCE
+	* manual/config.html: new file
+	* manual/usage.html: new file
+	* manual/index.html: new file
+	brief manual prepared
+
+	* source/polysq.h: from CoH3
+	* source/polycalc.cpp: from CoH3
+	* source/polysq.cpp: from CoH3
+	Least-Squares fitting module imported from CoH3
+
+	* source/riplread.cpp: new file
+	import IC from RIPL if ENSDF does not have this information
+
+	* source/outstat.cpp: new file
+	* source/censstat.cpp: new file
+	statistical analysis, level cutoff, level density, spin distribution
+
+2016-11-24  KAWANO Toshihiko  <kawano@lanl.gov>
+
+	* source/masstable_audi2012_frdm2012.h: from CoH3
+	* source/masstable.h: from CoH3
+	* source/masstable.cpp: from CoH3
+	for separation energy calculations
+
+	* source/outripl.cpp: new file
+	print results in RIPL format
+	theoretical ICC not yet given
+
+	* source/physicalconstant.h: from CoH3
+
+	* source/outxml.cpp: new file
+	imported from old DeCE code
+
+	* .gitignore: new file
+
+	* source/ensdf.h: new file
+	* source/ensdfread.cpp: new file
+	* source/cens.h: new file
+	* source/cens.cpp: new file
+	* source/elements.h: from CoH3
+	ENSDF reading part completed
+	version tracking started on 2016 ThanksGiving day
+	
+

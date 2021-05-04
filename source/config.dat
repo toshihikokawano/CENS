@@ -1,0 +1,23 @@
+## maximum number of discrete levels
+
+# MaxDiscreteLevels = 10000
+
+
+## maximum number of gamma-rays
+
+# MaxGammaLines     = 100
+
+
+## default ENSDF file directory
+
+# ENSDFDirectory = ../ENSDF/adopted
+
+
+## default RIPL discrete level directory
+
+# RIPLDirectory = /usr/local/share/coh/levels
+
+
+## unit conversion
+
+# EnergyUnit = MeV
