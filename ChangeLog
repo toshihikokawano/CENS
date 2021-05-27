@@ -1,3 +1,8 @@
+2021-05-26  KAWANO Toshihiko  <kawano@lanl.gov>
+
+	* source/outripl.cpp (OUTFripl): bug fixed
+	output column shifted by 1
+
 2021-03-14  KAWANO Toshihiko  <kawano@lanl.gov>
 
 	* source/censstat.cpp (CENSStat): updated

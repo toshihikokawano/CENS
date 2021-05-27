@@ -76,7 +76,7 @@ void OUTFripl(const int nc, const int nm, ENSDF *lib)
     /* print gamma-rays */
     for(int j=0 ; j<lib->gamma[i].getNgamma() ; j++){
       cout << "                                      ";
-      cout << setw(4)  << lib->gamma[i].getFstate(j)+1;
+      cout << setw(5) << lib->gamma[i].getFstate(j)+1;
 
       cout.setf(ios::fixed, ios::floatfield);
       cout << setprecision(3) << setw(11) << lib->gamma[i].getEnergy(j);
