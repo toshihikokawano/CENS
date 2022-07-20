@@ -3,14 +3,16 @@ file, the origial ENSDF that include different Z-number in the same
 A-chain should be separated into each (Z,A) set. This directory
 contains utilities to pre-process the entire ENSDF files.
 
-1: download all the ENSDF database under the orig directory
+1: create two directories, "orig" and "adopted".
+
+2: download all the ENSDF database under the orig directory
 
 Their name might be ensdf.AAA, where AAA is the mass number from 001
 to 300.  If not, change the run.sh script accordingly.
 
-2: run "run.sh" script
+3: run "run.sh" script
 
 This create a lot of files under the adopted directory, with the file
-names of ENSDFZZZAAA.dat. ZZZ and AAA are the charge and mass numbers.
+name of ENSDFZZZAAA.dat. ZZZ and AAA are the charge and mass numbers.
 These files include the adopted level section only, which can be
 processed by CENS.
