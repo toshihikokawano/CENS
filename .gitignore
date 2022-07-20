@@ -2,3 +2,5 @@
 *.o
 .dirstamp
 source/cens
+ENSDF/adopted/*.dat
+ENSDF/orig/ensdf.*

@@ -1,3 +1,13 @@
+2022-07-20  Toshihiko Kawano  <kawano@lanl.gov>
+
+	* ENSDF/run.sh: new file
+	* ENSDF/adoptedlevel.pl: new file
+	* ENSDF/README: new file
+	ENSDF pre-process utility added
+
+	* source/censstat.cpp (LEVELCheckCompleteness): modified
+	when there is ground state only, set NM = NC = 1
+
 2021-05-26  KAWANO Toshihiko  <kawano@lanl.gov>
 
 	* source/outripl.cpp (OUTFripl): bug fixed

@@ -2,7 +2,7 @@ CENS: Evaluated Nuclear Structure Data File Converter
 
    Language C++
    Author   Kawano, T.
-   Version  0.2 (Mar. 2021)
+   Version  0.3 (Jul. 2022)
 
 The CENS code translates adopted discrete levels in ENSDF into a
 Hauser-Feshbach code readable format, such as the discrete level
@@ -15,7 +15,7 @@ nuclear structure.
 History:
     0.1   Nov. 2016   initial version
     0.2   Mar. 2021   statistical analysis added, open-source version
-
+    0.3   Jul. 2022   ENSDF utility added
 
 Files:
     source/
@@ -47,4 +47,8 @@ Files:
         polycalc.cpp
         polysq.cpp
 
-
+    ENSDF/
+      [ENSDF pre-process utility]
+        README                document how to pre-process the entire ENSDF
+        adoptedlevel.pl       perl script to extract adopted levels from ENSDF
+        run.sh                execute adoptedlevel script to all the ENSDF files

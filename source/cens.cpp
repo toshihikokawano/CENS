@@ -1,7 +1,7 @@
 /******************************************************************************/
 /**                                                                          **/
 /**   CENS : Convert ENSDF into Hauser-Feshbach code library                 **/
-/**                                               Version 0.2  Mar. 2021     **/
+/**                                               Version 0.3  Jul. 2022     **/
 /**                                                            T. Kawano     **/
 /**                                       Los Alamos National Laboratory     **/
 /******************************************************************************/
@@ -16,7 +16,7 @@ using namespace std;
 #include "elements.h"
 #include "cfgread.h"
 
-static string version = "0.2 (Mar. 2021)";
+static string version = "0.3 (Jul. 2022)";
 
 static void CENSHelp(void);
 static void CENSAllocMemory(void);

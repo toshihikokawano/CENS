@@ -70,7 +70,6 @@ void CENSStat(ENSDF *lib, StatProperty *stp)
 
   delete [] x;
   delete [] y;
-
 }
 
 
@@ -81,19 +80,23 @@ int LEVELCheckCompleteness(ENSDF *lib)
 {
   int m = 0;
 
-  for(int i=0 ; i<lib->getNlevel() ; i++){
+  /* when g.s. is only given */
+  if(lib->getNlevel() == 1) m = 1;
+  else{
+    for(int i=0 ; i<lib->getNlevel() ; i++){
 
-    /* if more than one spins are given */
-    if(lib->nspin[i] > 1){ m = i-1; break; }
+      /* if more than one spins are given */
+      if(lib->nspin[i] > 1){ m = i-1; break; }
 
-    /* if spin is unknown */
-    if((int)lib->spin[i][0].j < 0){ m = i-1; break; }
+      /* if spin is unknown */
+      if((int)lib->spin[i][0].j < 0){ m = i-1; break; }
 
-    /* if parity is unkown */
-    if((int)lib->spin[i][0].p == 0){ m = i-1; break; }
+      /* if parity is unkown */
+      if((int)lib->spin[i][0].p == 0){ m = i-1; break; }
 
-    /* if no gamma-decay is given */
-    if((i != 0) && (lib->gamma[i].getNgamma() == 0)){ m = i-1; break; }
+      /* if no gamma-decay is given */
+      if((i != 0) && (lib->gamma[i].getNgamma() == 0)){ m = i-1; break; }
+    }
   }
 
   return m;
