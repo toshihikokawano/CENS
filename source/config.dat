@@ -10,7 +10,7 @@
 
 ## default ENSDF file directory
 
-ENSDFDirectory = ../ENSDF/adopted
+# ENSDFDirectory = ../ENSDF/adopted
 
 
 ## default RIPL discrete level directory
